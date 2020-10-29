@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.043,=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020-10-29 16:05:02.321,=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020-10-29 16:08:00.455,C:\Users\Alexander\Documents\GitHub\StateMachine\Main.pas=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020-10-29 16:08:00.455,C:\Users\Alexander\Documents\GitHub\StateMachine\Main.dfm=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2020-10-29 16:08:06.859,C:\Users\Alexander\Documents\GitHub\StateMachine\StateMachine.dproj=C:\Users\Alexander\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020-10-29 16:08:11.909,=C:\Users\Alexander\Documents\GitHub\StateMachine\Unit1.pas</Transaction>
+    <Transaction>2020-10-29 16:08:23.316,C:\Users\Alexander\Documents\GitHub\StateMachine\StateMachine.pas=C:\Users\Alexander\Documents\GitHub\StateMachine\Unit1.pas</Transaction>
+    <Transaction>2020-10-29 16:24:19.655,C:\Users\Alexander\Documents\GitHub\StateMachine\Monin_StateMachine.pas=C:\Users\Alexander\Documents\GitHub\StateMachine\StateMachine.pas</Transaction>
+  </Transactions>
+</BorlandProject>
