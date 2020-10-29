@@ -5,17 +5,17 @@ interface
 type
   TDoor = class;
 
-  IState = Interface
+  IState = Interface // Defines possible actions
     procedure Open(myDoor: TDoor);
     procedure Close(myDoor: TDoor);
     procedure Lock(myDoor: TDoor);
     procedure Unlock(myDoor: TDoor);
   End;
 
-  TDoor = class
+  TDoor = class // Main class
   private
-    myState: IState;
-    property SetState: IState write myState;
+    myState: IState; // Holds each state
+    property SetState: IState write myState; { TODO : Maybe hide it more? }
   public
     constructor Create;
 
@@ -24,16 +24,16 @@ type
     procedure Lock;
     procedure Unlock;
 
-    function GetState: IState;
+    function GetState: IState; // Only to get current state externally
   end;
 
   TOpened = class(TInterfacedObject, IState)
   private
-    class var instance: TOpened;
-    constructor Create; reintroduce; deprecated;
-    constructor MakeSingleton;
+    class var instance: TOpened; // Used for signleton pattern
+    constructor Create; reintroduce; deprecated; // Used for signleton pattern
+    constructor MakeSingleton; // Used for signleton pattern
   public
-    class function GetInstance: TOpened;
+    class function GetInstance: TOpened; // Used for signleton pattern
 
     procedure Open(myDoor: TDoor);
     procedure Close(myDoor: TDoor);
@@ -75,12 +75,18 @@ implementation
 
 procedure TDoor.Close;
 begin
-
+  {
+    myState store the current state,
+    then uses the IState to be able to call
+    Close for that specific state
+    pass self to access the TDoor
+  }
   myState.Close(self);
 end;
 
 constructor TDoor.Create;
 begin
+// Set initial state
   myState := TOpened.GetInstance;
 end;
 
@@ -120,12 +126,14 @@ end;
 
 class function TOpened.GetInstance: TOpened;
 begin
+  // Important for singleton, not thread safe
   if not Assigned(instance) then
     result := TOpened.MakeSingleton;
 end;
 
 procedure TOpened.Close(myDoor: TDoor);
 begin
+// Takes myDoor and set the new state to TClosed
   myDoor.SetState := TClosed.GetInstance;
 end;
 
